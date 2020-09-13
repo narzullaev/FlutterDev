@@ -8,14 +8,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xFF263238),
+        backgroundColor: Color(0xFFF5F5F5),
         body: SafeArea(
           child: ListView(
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 15.0),
                 child: new Theme(data: ThemeData(
-                  primaryColor: Colors.white,
+                  primaryColor: Colors.purpleAccent,
                   primaryColorDark: Colors.red,
                 ), child: TextField(
                   obscureText: true,
@@ -26,20 +26,20 @@ class MyApp extends StatelessWidget {
                     labelText: 'Search',
                     prefixIcon: const Icon(
                       Icons.search,
-                      color: Colors.white,
+                      color: Colors.grey,
                     ),
                   ),
                 ),)
               ),
 
               Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: ListTile(
                   leading: CircleAvatar(
                     radius: 22.0,
                     backgroundColor: Colors.purpleAccent,
                     child: CircleAvatar(
-                      radius: 20,
+                      radius: 21,
                       backgroundImage: AssetImage('images/ava.png'),
                     ),
                   ),
@@ -50,13 +50,13 @@ class MyApp extends StatelessWidget {
               ),
 
               Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: ListTile(
                   leading: CircleAvatar(
                     radius: 22.0,
                     backgroundColor: Colors.purpleAccent,
                     child: CircleAvatar(
-                      radius: 20,
+                      radius: 21,
                       backgroundImage: AssetImage('images/harry.png'),
                     ),
                   ),
@@ -67,13 +67,13 @@ class MyApp extends StatelessWidget {
               ),
 
               Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: ListTile(
                   leading: CircleAvatar(
                     radius: 22.0,
                     backgroundColor: Colors.purpleAccent,
                     child: CircleAvatar(
-                      radius: 20,
+                      radius: 21,
                       backgroundImage: AssetImage('images/jacob.png'),
                     ),
                   ),
@@ -84,13 +84,13 @@ class MyApp extends StatelessWidget {
               ),
 
               Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: ListTile(
                   leading: CircleAvatar(
                     radius: 22.0,
                     backgroundColor: Colors.purpleAccent,
                     child: CircleAvatar(
-                      radius: 20,
+                      radius: 21,
                       backgroundImage: AssetImage('images/mia.png'),
                     ),
                   ),
@@ -101,13 +101,13 @@ class MyApp extends StatelessWidget {
               ),
 
               Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: ListTile(
                   leading: CircleAvatar(
                     radius: 22.0,
                     backgroundColor: Colors.purpleAccent,
                     child: CircleAvatar(
-                      radius: 20,
+                      radius: 21,
                       backgroundImage: AssetImage('images/sophie.png'),
                     ),
                   ),
@@ -118,13 +118,13 @@ class MyApp extends StatelessWidget {
               ),
 
               Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: ListTile(
                   leading: CircleAvatar(
                     radius: 22.0,
                     backgroundColor: Colors.purpleAccent,
                     child: CircleAvatar(
-                      radius: 20,
+                      radius: 21,
                       backgroundImage: AssetImage('images/thomas.png'),
                     ),
                   ),
@@ -134,6 +134,22 @@ class MyApp extends StatelessWidget {
                 ),
               ),
 
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 22.0,
+                    backgroundColor: Colors.purpleAccent,
+                    child: CircleAvatar(
+                      radius: 21,
+                      backgroundImage: AssetImage('images/jack.png'),
+                    ),
+                  ),
+                  title: Text('Jack'),
+                  subtitle: Text('+35764438658'),
+                  trailing: Icon(Icons.call, color: Colors.green,),
+                ),
+              ),
 
             ],
           ),
