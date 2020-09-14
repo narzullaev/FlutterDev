@@ -1,161 +1,78 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(new MaterialApp(
+  home: new AppHome(),
+));
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class AppHome extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return new AppState();
+  }
+}
+
+class AppState extends State<StatefulWidget>{
+
+  // List of predefined names
+  List<String> mNames = [
+    'Ava', 'Harry', 'Jack', 'Jacob', 'Mia', 'Sophie', 'Thomas'
+  ];
+
+  // List of predefined contact numbers
+  List<String> mPhone = [
+    '+60123123345', '+60186773340', '+68236432432', '+69832749823',
+    '+73289479837', '+87432823462', '+35764438658'
+  ];
+
+  // List of photo assets
+  List<String> mPhotos = [
+    'ava.png', 'harry.png', 'jack.png', 'jacob.png', 'mia.png', 'sophie.png',
+    'thomas.png'
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Color(0xFFF5F5F5),
-        body: SafeArea(
-          child: ListView(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 15.0),
-                child: new Theme(data: ThemeData(
-                  primaryColor: Colors.purpleAccent,
-                  primaryColorDark: Colors.red,),
-                  child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.white)
-                    ),
-                    labelText: 'Search',
-                    prefixIcon: const Icon(
-                      Icons.search,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ),)
-              ),
+    return new Scaffold(
+      appBar: AppBar(
+        title: new Text('Calls'),
+      ),
 
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    radius: 22.0,
-                    backgroundColor: Colors.purpleAccent,
-                    child: CircleAvatar(
-                      radius: 21,
-                      backgroundImage: AssetImage('images/ava.png'),
-                    ),
-                  ),
-                  title: Text('Ava '),
-                  subtitle: Text('+60123123345'),
-                  trailing: Icon(Icons.call, color: Colors.green,),
-                ),
-              ),
-
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    radius: 22.0,
-                    backgroundColor: Colors.purpleAccent,
-                    child: CircleAvatar(
-                      radius: 21,
-                      backgroundImage: AssetImage('images/harry.png'),
-                    ),
-                  ),
-                  title: Text('Harry'),
-                  subtitle: Text('+60186773340'),
-                  trailing: Icon(Icons.call, color: Colors.green,),
-                ),
-              ),
-
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    radius: 22.0,
-                    backgroundColor: Colors.purpleAccent,
-                    child: CircleAvatar(
-                      radius: 21,
-                      backgroundImage: AssetImage('images/jacob.png'),
-                    ),
-                  ),
-                  title: Text('Jacob'),
-                  subtitle: Text('+68236432432'),
-                  trailing: Icon(Icons.call, color: Colors.green),
-                ),
-              ),
-
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    radius: 22.0,
-                    backgroundColor: Colors.purpleAccent,
-                    child: CircleAvatar(
-                      radius: 21,
-                      backgroundImage: AssetImage('images/mia.png'),
-                    ),
-                  ),
-                  title: Text('Mia'),
-                  subtitle: Text('+69832749823'),
-                  trailing: Icon(Icons.call, color: Colors.green,),
-                ),
-              ),
-
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    radius: 22.0,
-                    backgroundColor: Colors.purpleAccent,
-                    child: CircleAvatar(
-                      radius: 21,
-                      backgroundImage: AssetImage('images/sophie.png'),
-                    ),
-                  ),
-                  title: Text('Sophie'),
-                  subtitle: Text('+73289479837'),
-                  trailing: Icon(Icons.call, color: Colors.green),
-                ),
-              ),
-
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    radius: 22.0,
-                    backgroundColor: Colors.purpleAccent,
-                    child: CircleAvatar(
-                      radius: 21,
-                      backgroundImage: AssetImage('images/thomas.png'),
-                    ),
-                  ),
-                  title: Text('Thomas'),
-                  subtitle: Text('+87432823462'),
-                  trailing: Icon(Icons.call, color: Colors.green,),
-                ),
-              ),
-
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    radius: 22.0,
-                    backgroundColor: Colors.purpleAccent,
-                    child: CircleAvatar(
-                      radius: 21,
-                      backgroundImage: AssetImage('images/jack.png'),
-                    ),
-                  ),
-                  title: Text('Jack'),
-                  subtitle: Text('+35764438658'),
-                  trailing: Icon(Icons.call, color: Colors.green,),
-                ),
-              ),
-
-            ],
-          ),
+      body: new Container(
+        child: new ListView.builder(
+            itemCount: this.mNames.length,
+            itemBuilder: (_, int index) => Call(this.mNames[index], this.mPhone[index],
+                                                this.mPhotos[index])
         ),
       ),
     );
   }
+}
+
+class Call extends StatelessWidget {
+  final String mName;
+  final String mPhoneNum;
+  final String mPhoto;
+
+  Call(this.mName, this.mPhoneNum, this.mPhoto);
+  @override
+  Widget build(BuildContext context) {
+    return new Card(
+      margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+      child: ListTile(
+        leading: CircleAvatar(
+          radius: 22.0,
+          backgroundColor: Colors.purpleAccent,
+          child: CircleAvatar(
+            radius: 21,
+            backgroundImage: AssetImage('images/' + mPhoto),
+          ),
+        ),
+        title: Text(mName),
+        subtitle: Text(mPhoneNum),
+        trailing: Icon(Icons.call, color: Colors.green,),
+      ),
+    );
+  }
+
 }
 
