@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 15.0),
                 child: new Theme(data: ThemeData(
                   primaryColor: Colors.purpleAccent,
-                  primaryColorDark: Colors.red,
-                ), child: TextField(
+                  primaryColorDark: Colors.red,),
+                  child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
