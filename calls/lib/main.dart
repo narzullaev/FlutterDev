@@ -80,11 +80,16 @@ class Call extends StatelessWidget {
           ),
           title: Text(mName),
           subtitle: Text(mPhoneNum),
-          trailing: Icon(Icons.call, color: Colors.green,),
+          trailing: IconButton(
+            icon: Icon(Icons.call, color: Colors.green),
+            tooltip: 'Init call',
+            onPressed: (){
+              showToast('Calling', position: ToastPosition.center);
+            },
+          ),
         ),
       ),
     );
   }
-
 }
 
