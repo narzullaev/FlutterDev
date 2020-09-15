@@ -59,20 +59,25 @@ class Call extends StatelessWidget {
   Call(this.mName, this.mPhoneNum, this.mPhoto);
   @override
   Widget build(BuildContext context) {
-    return new Card(
-      margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
-      child: ListTile(
-        leading: CircleAvatar(
-          radius: 22.0,
-          backgroundColor: Colors.purpleAccent,
-          child: CircleAvatar(
-            radius: 21,
-            backgroundImage: AssetImage('images/' + mPhoto),
+    return FlatButton(
+      onPressed: (){
+        print(mName);
+      },
+      child: new Card(
+        margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+        child: ListTile(
+          leading: CircleAvatar(
+            radius: 22.0,
+            backgroundColor: Colors.purpleAccent,
+            child: CircleAvatar(
+              radius: 21,
+              backgroundImage: AssetImage('images/' + mPhoto),
+            ),
           ),
+          title: Text(mName),
+          subtitle: Text(mPhoneNum),
+          trailing: Icon(Icons.call, color: Colors.green,),
         ),
-        title: Text(mName),
-        subtitle: Text(mPhoneNum),
-        trailing: Icon(Icons.call, color: Colors.green,),
       ),
     );
   }
