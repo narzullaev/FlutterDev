@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:oktoast/oktoast.dart';
+
 
 // YouTube tutorial https://www.youtube.com/watch?v=-GMcRq-xoh4&feature=emb_logo
 
@@ -34,17 +36,19 @@ class AppState extends State<StatefulWidget>{
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
-      appBar: AppBar(
-        title: new Text('Calls'),
-      ),
+    return OKToast(
+      child: new Scaffold(
+        backgroundColor: Color(0xFFF5F5F5),
+        appBar: AppBar(
+          title: new Text('Calls'),
+        ),
 
-      body: Container(
-        child: new ListView.builder(
-            itemCount: this.mNames.length,
-            itemBuilder: (_, int index) => Call(this.mNames[index], this.mPhone[index],
-                this.mPhotos[index])
+        body: Container(
+          child: new ListView.builder(
+              itemCount: this.mNames.length,
+              itemBuilder: (_, int index) => Call(this.mNames[index], this.mPhone[index],
+                  this.mPhotos[index])
+          ),
         ),
       ),
     );
@@ -61,7 +65,7 @@ class Call extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       onPressed: (){
-        print(mName);
+        showToast(mName, position: ToastPosition.bottom);
       },
       child: new Card(
         margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
