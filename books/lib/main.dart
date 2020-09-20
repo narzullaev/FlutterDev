@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:oktoast/oktoast.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -38,7 +40,6 @@ class MyApp extends StatelessWidget {
               buildCategory(color: Colors.purple, image:'science.png', title:'SCIENCE'),
               buildCategory(color: Colors.blue, image:'history.png', title:'HISTORY'),
               buildCategory(color: Colors.purple.shade700, image:'technology.png', title:'TECHNOLOGY'),
-
             ],
           ),
         ),
