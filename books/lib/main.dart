@@ -4,7 +4,7 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
 
-  Expanded buildCategory({MaterialColor color, String image, String title}){
+  Expanded buildCategory({Color color, String image, String title}){
 
     return Expanded(
       child: Container(
@@ -31,7 +31,13 @@ class MyApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: <Widget>[
-              buildCategory(color: Colors.red, image:'language.png', title:'Language'),
+              buildCategory(color: Colors.green, image:'language.png', title:'LANGUAGE'),
+              buildCategory(color: Colors.yellow.shade700, image:'literature.png', title:'LITERATURE'),
+              buildCategory(color: Colors.orange, image:'fiction.png', title:'FICTION'),
+              buildCategory(color: Colors.redAccent.shade700, image:'detective.png', title:'DETECTIVE'),
+              buildCategory(color: Colors.purple, image:'science.png', title:'SCIENCE'),
+              buildCategory(color: Colors.blue, image:'history.png', title:'HISTORY'),
+              buildCategory(color: Colors.purple.shade700, image:'technology.png', title:'TECHNOLOGY'),
 
             ],
           ),
