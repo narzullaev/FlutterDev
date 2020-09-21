@@ -9,7 +9,10 @@ class MyApp extends StatelessWidget {
   Expanded buildCategory({Color color, String image, String title}){
 
     return Expanded(
-      child: Container(
+      child: FlatButton(
+        onPressed: (){
+          print(title);
+        },
         color: color,
         child: Center(
           child: ListTile(
