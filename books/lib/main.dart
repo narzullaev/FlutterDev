@@ -1,6 +1,6 @@
+
 import 'package:flutter/material.dart';
 import 'package:oktoast/oktoast.dart';
-
 
 void main() => runApp(MyApp());
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return Expanded(
       child: FlatButton(
         onPressed: (){
-          print(title);
+
         },
         color: color,
         child: Center(
