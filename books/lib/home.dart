@@ -1,10 +1,20 @@
+
+
+import 'package:books/languages.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  Expanded buildCategory({Color color, String image, String title}) {
+  Expanded buildCategory(
+      {Color color, String image, String title, BuildContext context, StatelessWidget activity}) {
     return Expanded(
       child: FlatButton(
-        onPressed: () {},
+        onPressed: () {
+          print('hello');
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (BuildContext context) => Languages()),
+          );
+        },
         color: color,
         child: Center(
           child: ListTile(
@@ -44,25 +54,29 @@ class Home extends StatelessWidget {
               buildCategory(
                   color: Colors.green,
                   image: 'language.png',
-                  title: 'LANGUAGE'),
+                  title: 'LANGUAGE',
+                  context: context,
+                  activity: Languages()),
               buildCategory(
                   color: Colors.yellow.shade700,
                   image: 'literature.png',
-                  title: 'LITERATURE'),
+                  title: 'LITERATURE',
+                  context: context,
+                  ),
               buildCategory(
-                  color: Colors.orange, image: 'fiction.png', title: 'FICTION'),
+                  color: Colors.orange, image: 'fiction.png', title: 'FICTION', context: context),
               buildCategory(
                   color: Colors.redAccent.shade700,
                   image: 'detective.png',
-                  title: 'DETECTIVE'),
+                  title: 'DETECTIVE', context: context),
               buildCategory(
-                  color: Colors.purple, image: 'science.png', title: 'SCIENCE'),
+                  color: Colors.purple, image: 'science.png', title: 'SCIENCE', context: context),
               buildCategory(
-                  color: Colors.blue, image: 'history.png', title: 'HISTORY'),
+                  color: Colors.blue, image: 'history.png', title: 'HISTORY', context: context),
               buildCategory(
                   color: Colors.purple.shade700,
                   image: 'technology.png',
-                  title: 'TECHNOLOGY'),
+                  title: 'TECHNOLOGY', context: context),
             ],
           ),
         ),
