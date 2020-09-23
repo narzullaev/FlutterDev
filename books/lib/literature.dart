@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Languages extends StatelessWidget {
+class Literature extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

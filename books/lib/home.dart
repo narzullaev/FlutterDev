@@ -1,6 +1,6 @@
 
-
 import 'package:books/languages.dart';
+import 'package:books/literature.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
           print('hello');
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (BuildContext context) => Languages()),
+            MaterialPageRoute(builder: (BuildContext context) => activity),
           );
         },
         color: color,
@@ -62,7 +62,7 @@ class Home extends StatelessWidget {
                   image: 'literature.png',
                   title: 'LITERATURE',
                   context: context,
-                  ),
+                  activity: Literature()),
               buildCategory(
                   color: Colors.orange, image: 'fiction.png', title: 'FICTION', context: context),
               buildCategory(
