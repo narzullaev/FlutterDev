@@ -1,11 +1,14 @@
-
 import 'package:books/languages.dart';
 import 'package:books/literature.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
   Expanded buildCategory(
-      {Color color, String image, String title, BuildContext context, StatelessWidget activity}) {
+      {Color color,
+      String image,
+      String title,
+      BuildContext context,
+      StatelessWidget activity}) {
     return Expanded(
       child: FlatButton(
         onPressed: () {
@@ -64,19 +67,32 @@ class Home extends StatelessWidget {
                   context: context,
                   activity: Literature()),
               buildCategory(
-                  color: Colors.orange, image: 'fiction.png', title: 'FICTION', context: context),
+                  color: Colors.orange,
+                  image: 'fiction.png',
+                  title: 'FICTION',
+                  context: context,
+                  activity: Literature()),
               buildCategory(
                   color: Colors.redAccent.shade700,
                   image: 'detective.png',
-                  title: 'DETECTIVE', context: context),
+                  title: 'DETECTIVE',
+                  context: context,
+                  activity: Literature()),
               buildCategory(
-                  color: Colors.purple, image: 'science.png', title: 'SCIENCE', context: context),
+                  color: Colors.purple,
+                  image: 'science.png',
+                  title: 'SCIENCE',
+                  context: context),
               buildCategory(
-                  color: Colors.blue, image: 'history.png', title: 'HISTORY', context: context),
+                  color: Colors.blue,
+                  image: 'history.png',
+                  title: 'HISTORY',
+                  context: context),
               buildCategory(
                   color: Colors.purple.shade700,
                   image: 'technology.png',
-                  title: 'TECHNOLOGY', context: context),
+                  title: 'TECHNOLOGY',
+                  context: context),
             ],
           ),
         ),
