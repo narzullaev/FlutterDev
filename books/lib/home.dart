@@ -1,5 +1,10 @@
+import 'package:books/detective.dart';
+import 'package:books/fiction.dart';
+import 'package:books/history.dart';
 import 'package:books/languages.dart';
 import 'package:books/literature.dart';
+import 'package:books/science.dart';
+import 'package:books/technology.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -71,28 +76,31 @@ class Home extends StatelessWidget {
                   image: 'fiction.png',
                   title: 'FICTION',
                   context: context,
-                  activity: Literature()),
+                  activity: Fiction()),
               buildCategory(
                   color: Colors.redAccent.shade700,
                   image: 'detective.png',
                   title: 'DETECTIVE',
                   context: context,
-                  activity: Literature()),
+                  activity: Detective()),
               buildCategory(
                   color: Colors.purple,
                   image: 'science.png',
                   title: 'SCIENCE',
-                  context: context),
+                  context: context,
+                  activity: Science()),
               buildCategory(
                   color: Colors.blue,
                   image: 'history.png',
                   title: 'HISTORY',
-                  context: context),
+                  context: context,
+                  activity: History()),
               buildCategory(
                   color: Colors.purple.shade700,
                   image: 'technology.png',
                   title: 'TECHNOLOGY',
-                  context: context),
+                  context: context,
+                  activity: Technology()),
             ],
           ),
         ),
