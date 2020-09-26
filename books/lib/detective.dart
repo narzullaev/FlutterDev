@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Fiction extends StatelessWidget {
+class Detective extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,7 +9,7 @@ class Fiction extends StatelessWidget {
           icon: Icon(Icons.menu),
           onPressed: () {},
         ),
-        title: Text('Fiction'),
+        title: Text('Detective'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
